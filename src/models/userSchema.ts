@@ -21,8 +21,14 @@ const userSchema = new Schema<User>({
   },
   location: {
     street: {
-      type: String,
-      required: true
+      number: {
+        type: Number,
+        required: true
+      },
+      name: {
+        type: String,
+        required: true
+      }
     },
     city: {
       type: String,
@@ -33,7 +39,7 @@ const userSchema = new Schema<User>({
       required: true
     },
     postcode: {
-      type: Number,
+      type: String,
       required: true
     },
     coordinates: {

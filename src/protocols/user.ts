@@ -6,10 +6,13 @@ export interface User {
     last: string
   },
   location: {
-    street: string,
+    street: { 
+      number: Number, 
+      name: string 
+    },
     city: string,
     state: string,
-    postcode: number,
+    postcode: string,
     coordinates: {
       latitude: string,
       longitude: string,
