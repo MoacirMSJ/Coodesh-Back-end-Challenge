@@ -10,3 +10,8 @@ export const getOne =  async (userId: string ) => {
   const userData = await UserModel.findOne({_id: userId });
   return userData;
 }
+
+export const getMany = async () => {
+  const users = await UserModel.find();
+  return users;
+}
