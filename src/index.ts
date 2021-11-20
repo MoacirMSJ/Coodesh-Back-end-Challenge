@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
   res.send({message: 'REST Back-end Challenge 20201209 Running'})
 })
 
+app.put('/users/:userId', userController.updateUser)
 app.post('/user', userController.newUser)
 app.get('/users/:userId', userController.getUser)
 app.get('/users', userController.getAllUsers)
