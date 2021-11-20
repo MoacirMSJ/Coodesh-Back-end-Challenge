@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  db_pharma:
+    container_name: db_pharma
+    image: mongo:5.0.3
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: pass
+      MONGO_INITDB_DATABASE: pharma
+    env_file: .env
+    ports:
+      - 27017:27017
+    networks:
+      - pharma
+    volumes:
+      - ./db/.dbshell:/home/mongodb/.dbshell
+      - mongodb:/data/db
+      - ./db/mongo.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+
+volumes:
+  mongodb:
+
+networks:
+  pharma:
+    name: pharma
+    driver: bridge

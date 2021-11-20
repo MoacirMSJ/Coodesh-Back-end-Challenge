@@ -1,9 +1,13 @@
+import mongoose from 'mongoose'
 import express from 'express'
+
+
 const app = express();
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.send({message: 'REST Back-end Challenge 20201209 Running'})
-})
+const urlMongo = 'mongodb://user:pass@localhost:27017/pharma'
+mongoose.connect(urlMongo)
+
+
 
 app.listen(8080, () => console.log('Server started port: 8080'))
