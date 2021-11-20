@@ -121,7 +121,7 @@ const userSchema = new Schema<User>({
   cell: {
     type: String
   },
-  userId: {
+  id: {
     name: {
       type: String
     },
@@ -152,7 +152,7 @@ const userSchema = new Schema<User>({
     type: String,
     enum: ['trash','published']
   },
-})
+},{id: false})
 
 
 export const UserModel = model('User', userSchema)

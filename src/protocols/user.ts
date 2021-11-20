@@ -41,7 +41,7 @@ export interface User {
     type: String
   },
   cell: string,
-  userId: {
+  id: {
     name: string,
     value: string
   },
