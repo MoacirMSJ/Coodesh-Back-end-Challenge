@@ -14,5 +14,6 @@ app.get('/', (req, res) => {
 
 app.post('/user', userController.newUser)
 app.get('/users/:userId', userController.getUser)
+app.get('/users', userController.getAllUsers)
 
 app.listen(8080, () => console.log('Server started port: 8080'))
