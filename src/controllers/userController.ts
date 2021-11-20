@@ -1,4 +1,4 @@
-import {createOne} from '../services/userService'
+import {createOne, getOne} from '../services/userService'
 import {Request, Response} from 'express'
 
 const newUser = async (req: Request, res: Response) => {
@@ -6,4 +6,10 @@ const newUser = async (req: Request, res: Response) => {
     return res.status(200).json(response);
 }
 
-export default {newUser};
+const getUser = async (req: Request, res: Response) => {
+    const userId = req.params.userId;
+    const response = await getOne(userId);
+    return res.status(200).json(response);
+}
+
+export default {newUser, getUser};
