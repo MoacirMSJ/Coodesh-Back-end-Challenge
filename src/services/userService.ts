@@ -20,3 +20,8 @@ export const deleteOne = async (userId: string) => {
   const users = await UserModel.deleteOne({_id: userId});
   return users;
 }
+
+export const updateOne = async (userId: string, user: User) => {
+  const users = await UserModel.findOneAndUpdate({ _id: userId}, user);
+  return users;
+}
