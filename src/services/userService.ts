@@ -25,3 +25,15 @@ export const updateOne = async (userId: string, user: User) => {
   const users = await UserModel.findOneAndUpdate({ _id: userId}, user);
   return users;
 }
+
+export const createMany = async (userList: User[]) => {
+  userList.forEach( async (user) => {
+    const result = await UserModel.exists({id: user.id})
+    if (!result) {
+      await UserModel.create(user);
+    }
+    else {
+      console.log('usuario já existe: ', user.name)
+    }
+  })
+}
