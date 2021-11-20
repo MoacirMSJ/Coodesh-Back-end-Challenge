@@ -15,3 +15,8 @@ export const getMany = async () => {
   const users = await UserModel.find();
   return users;
 }
+
+export const deleteOne = async (userId: string) => {
+  const users = await UserModel.deleteOne({_id: userId});
+  return users;
+}
