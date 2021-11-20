@@ -5,3 +5,8 @@ export const createOne = async (user: User): Promise<User> => {
   const userData = await UserModel.create(user);
   return userData;
 }
+
+export const getOne =  async (userId: string ) => {
+  const userData = await UserModel.findOne({_id: userId });
+  return userData;
+}
