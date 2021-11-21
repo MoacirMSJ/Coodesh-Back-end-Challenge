@@ -3,7 +3,10 @@ import express from 'express';
 import userController from './controllers/userController';
 import cron from 'node-cron';
 import {getUsersFromRadomUser} from './services/conJobUser';
+import swaggerUi from 'swagger-ui-express';
+import { apiDocumentation } from './documentation';
 require('dotenv').config();
+
 
 const app = express();
 app.use(express.json());
@@ -19,8 +22,10 @@ const db_acess = {
 const urlMongo = `mongodb://${db_acess.user}:${db_acess.pass}@${db_acess.host}:${db_acess.port}/${db_acess.db}`;
 mongoose.connect(urlMongo);
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(apiDocumentation));
+
 app.get('/', (req, res) => {
-  res.send({ message: 'REST Back-end Challenge 20201209 Running' });
+  res.status(200).send({ message: 'REST Back-end Challenge 20201209 Running' });
 })
 app.put('/users/:userId', userController.updateUser);
 app.post('/user', userController.newUser);
