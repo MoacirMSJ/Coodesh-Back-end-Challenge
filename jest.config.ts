@@ -13,6 +13,8 @@ export default {
   roots: [
     '<rootDir>/src'
   ],
+  preset: "@shelf/jest-mongodb",
+
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
