@@ -23,7 +23,7 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
         GET /users: Listar todos os usuários da base de dados
 
 ## Tecnologias Utilizadas:
-  - Nodejs v15.14.0
+  - Nodejs
   - Typescript
   - express
   - Docker
@@ -46,7 +46,7 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
   - **APPLICATION_PORT**= Porta para a aplicação.
   - **NUMBER_OF_REQUEST_RANDOM_USERS**= Define o numero de chamadas a api [random users](https://randomuser.me/documentation).
   - **NUMBER_OF_USERS_FROM_RANDOM_USERS**= Define a quantidade de usuários que serão buscados a cada chamada a api [random users](https://randomuser.me/documentation).
-  - **CRON**= Define o horário que o cron-job executará, requisitando os usuários em [random users](https://randomuser.me/documentation)
+  - **CRON**= Define o horário([sintax](https://www.npmjs.com/package/node-cron)) que o cron-job executará, requisitando os usuários em [random users](https://randomuser.me/documentation)
   
   Exemplo de .env:
 
@@ -54,21 +54,32 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
     DB_PASS=pass
     DB_NAME=pharma
     DB_PORT=27017
-    DB_HOST=localhost
+    DB_HOST=db_pharma
     APPLICATION_PORT=8080
     NUMBER_OF_REQUEST_RANDOM_USERS=10
     NUMBER_OF_USERS_FROM_RANDOM_USERS=3
-    CRON='0 0 0 * *'
+    CRON='0 0 * * *'
 
 3. Suba e acesse aplicação:
   
     Comando para subir:
 
-        ``docker-compose up -d``
+        docker-compose up -d
     
     Acesse:
 
         http://localhost:<APPLICATION_PORT>/
+
+4. Parando aplicação:
+  
+      Somente parar:
+        
+        docker-compose stop
+
+      Para e apagar container:
+
+        docker-compose down 
+
 
 ## Referencia
   challenge by coodesh  
