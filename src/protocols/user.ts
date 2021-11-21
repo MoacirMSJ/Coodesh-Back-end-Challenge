@@ -7,10 +7,11 @@ export interface User {
   },
   location: {
     street: { 
-      number: Number, 
+      number: number, 
       name: string 
     },
     city: string,
+    country?: string,
     state: string,
     postcode: string,
     coordinates: {
@@ -40,9 +41,7 @@ export interface User {
     date: string,
     age: number
   },
-  phone: {
-    type: String
-  },
+  phone: string,
   cell: string,
   id: {
     name: string,
@@ -53,9 +52,7 @@ export interface User {
     medium: string,
     thumbnail: string
   },
-  nat: {
-    type: string
-  },
+  nat: string,
   imported_t?: any,
   status?: string
 };
