@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import express from 'express';
 import userController from './controllers/userController';
 import cron from 'node-cron';
-import {getUsersFromRadomUser} from './services/conJobUser';
+import {getUsersFromRadomUser} from './services/cronJobUser';
 import swaggerUi from 'swagger-ui-express';
 import { apiDocumentation } from './documentation';
 require('dotenv').config();
