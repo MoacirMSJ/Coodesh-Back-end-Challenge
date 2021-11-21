@@ -157,7 +157,8 @@ const userSchema = new Schema<User>({
   },
   status: {
     type: String,
-    enum: ['trash','published']
+    enum: ['trash','published'],
+    default: 'published'
   },
 },{id: false});
 
