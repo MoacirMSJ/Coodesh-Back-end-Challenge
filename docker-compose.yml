@@ -10,14 +10,27 @@ services:
       MONGO_INITDB_DATABASE: pharma
     env_file: .env
     ports:
-      - 27017:27017
+      - ${DB_PORT}:27017
     networks:
       - pharma
     volumes:
       - ./db/.dbshell:/home/mongodb/.dbshell
       - mongodb:/data/db
       - ./db/mongo.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
-
+  
+  pharma_backend:
+    depends_on:
+      - db_pharma
+    build: .
+    container_name: pharma_backend
+    ports:
+      - ${APPLICATION_PORT}:8080
+    env_file: .env
+    networks:
+      - pharma
+    volumes:
+      - ./:/code
+    
 volumes:
   mongodb:
 
