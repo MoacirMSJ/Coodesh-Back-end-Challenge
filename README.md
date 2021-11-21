@@ -69,6 +69,10 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
     Acesse:
 
         http://localhost:<APPLICATION_PORT>/
+    
+    Acesse a documentação:
+    
+        http://localhost:<APPLICATION_PORT>/api-docs
 
 4. Parando aplicação:
   
