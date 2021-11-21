@@ -58,4 +58,4 @@ export interface User {
   },
   imported_t?: any,
   status?: string
-}
+};

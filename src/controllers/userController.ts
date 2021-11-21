@@ -1,5 +1,5 @@
-import {createOne, getOne, getMany, deleteOne, updateOne} from '../services/userService'
-import {Request, Response} from 'express'
+import { createOne, getOne, getMany, deleteOne, updateOne } from '../services/userService';
+import { Request, Response } from 'express';
 
 const newUser = async (req: Request, res: Response) => {
     const response = await createOne(req.body);

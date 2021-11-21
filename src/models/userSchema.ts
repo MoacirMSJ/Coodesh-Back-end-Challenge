@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
-import {User} from '../protocols/user'
+import {User} from '../protocols/user';
+
 const userSchema = new Schema<User>({
   gender: {
     type: String,
@@ -158,7 +159,7 @@ const userSchema = new Schema<User>({
     type: String,
     enum: ['trash','published']
   },
-},{id: false})
+},{id: false});
 
 
-export const UserModel = model('User', userSchema)
+export const UserModel = model('User', userSchema);
