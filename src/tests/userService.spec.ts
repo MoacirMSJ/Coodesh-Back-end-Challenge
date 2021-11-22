@@ -28,7 +28,6 @@ describe('User services ', () => {
 
   test('Create user: success', async () => {
     const response = await createOne(userData());
-    console.log(response);
     expect(response).toEqual({ statusCode: 201, data: { message: "Usuário criado!"} });
   });
 
@@ -36,7 +35,6 @@ describe('User services ', () => {
     let user = userData();
     user.email= null;
     const response = await createOne(user);
-    console.log(response);
     expect(response).toEqual({ statusCode: 400, data: { message: "Erro ao criar usuário!" } });
   });
 
