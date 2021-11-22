@@ -61,7 +61,7 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
     APPLICATION_PORT=8080
     NUMBER_OF_REQUEST_RANDOM_USERS=10
     NUMBER_OF_USERS_FROM_RANDOM_USERS=100
-    CRON='0 0 * * *'
+    CRON='0 0 0 * * *'
 
 3. Suba e acesse aplicação:
   
