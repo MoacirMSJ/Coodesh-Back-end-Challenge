@@ -29,6 +29,7 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
   - Docker
   - docker-compose
   - Mongodb
+  - Jest
 
 ## Instruções de uso
 
