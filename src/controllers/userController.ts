@@ -1,6 +1,10 @@
 import { createOne, getOne, getMany, deleteOne, updateOne } from '../services/userService';
 import { Request, Response } from 'express';
 
+const rootRoute = (req, res) => {
+    res.status(200).send({ message: 'REST Back-end Challenge 20201209 Running' });
+}
+
 const newUser = async (req: Request, res: Response) => {
     const response = await createOne(req.body);
     return res.status(response.statusCode).json(response.data);
@@ -29,4 +33,4 @@ const updateUser = async (req: Request, res: Response) => {
     return res.status(response.statusCode).json(response.data);
 }
 
-export default {newUser, getUser, getAllUsers, deleteUser, updateUser};
+export default {newUser, getUser, getAllUsers, deleteUser, updateUser, rootRoute};
