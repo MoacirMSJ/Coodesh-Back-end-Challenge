@@ -22,6 +22,8 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
 
         GET /users: Listar todos os usuários da base de dados
 
+  - Utilizar cron-job para importar dados da api [random users](https://randomuser.me/documentation).
+
 ## Tecnologias Utilizadas:
   - Nodejs
   - Typescript
@@ -58,7 +60,7 @@ O seu objetivo nesse projeto, é trabalhar no desenvolvimento da REST API da emp
     DB_HOST=db_pharma
     APPLICATION_PORT=8080
     NUMBER_OF_REQUEST_RANDOM_USERS=10
-    NUMBER_OF_USERS_FROM_RANDOM_USERS=3
+    NUMBER_OF_USERS_FROM_RANDOM_USERS=100
     CRON='0 0 * * *'
 
 3. Suba e acesse aplicação:
