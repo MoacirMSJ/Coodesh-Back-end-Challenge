@@ -23,10 +23,7 @@ const urlMongo = `mongodb://${db_acess.user}:${db_acess.pass}@${db_acess.host}:$
 mongoose.connect(urlMongo);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(apiDocumentation));
-
-app.get('/', (req, res) => {
-  res.status(200).send({ message: 'REST Back-end Challenge 20201209 Running' });
-})
+app.get('/', userController.rootRoute);
 app.put('/users/:userId', userController.updateUser);
 app.post('/user', userController.newUser);
 app.get('/users/:userId', userController.getUser);
@@ -37,4 +34,4 @@ cron.schedule(process.env.CRON, async () => {
   await getUsersFromRadomUser();
 });
 
-app.listen(8080, () => console.log('Server started port: 8080'));
+app.listen(8080, () => console.log(`Server started port: ${process.env.APPLICATION_PORT}`));
