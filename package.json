@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
+    "start": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --ignore src/tests --no-notify src/index.ts",
     "test": "jest"
   },
   "author": "",
